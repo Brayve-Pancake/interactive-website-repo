@@ -1,7 +1,20 @@
+import { useState } from "react";
+import "./contact.css";
+
 export default function Contact() {
-  return (
-    <div>
-      <h1>Contact</h1>
-    </div>
-  );
+  const [formData, setFormData] = useState({
+    FullName: "",
+    EmailAddress: "",
+    PhoneNumbers: ["string"],
+    Message: "",
+    bIncludeAddressDetails: false,
+    AddressDetails: {
+      AddressLine1: "",
+      AddressLine2: "",
+      CityTown: "",
+      StateCounty: "",
+      Postcode: "",
+      Country: "",
+    },
+  });
 }
