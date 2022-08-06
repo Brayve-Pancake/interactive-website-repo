@@ -3,7 +3,6 @@
 }
 
 .about > h1 {
-  margin-top: 20px;
   font-size: 1.5em;
   font-weight: 400;
 }
@@ -40,6 +39,7 @@
 
 .about--img {
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .about--a {
@@ -48,4 +48,13 @@
 }
 
 @media (min-device-width: 1200px) {
+  .about {
+    padding-inline: 15%;
+  }
+
+  .about--img {
+    display: block;
+    margin-inline: auto;
+    width: 70%;
+  }
 }

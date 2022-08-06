@@ -34,7 +34,6 @@ export default function About() {
           alt="Office space with a comfortable orange chair"
         ></img>
         <br></br>
-        <br></br>
         Velit, sunt cum vitae fugit doloremque dolore aspernatur sapiente fugiat
         dignissimos error minus veritatis! Quos reprehenderit a perspiciatis
         praesentium distinctio adipisci nam iure dolorum cum quidem! Nobis
