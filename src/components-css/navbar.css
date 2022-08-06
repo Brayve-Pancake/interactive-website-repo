@@ -1,0 +1,57 @@
+.navbar {
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+.navbar--logo {
+  width: 175px;
+  border: 1px solid gold;
+  padding: 1em;
+}
+
+@media (min-device-width: 1200px) {
+  .navbar {
+    padding-inline: 5%;
+    height: 50px;
+    justify-content: space-between;
+  }
+  .navbar--logo {
+    padding: 0;
+  }
+  .navbar--nav {
+    display: flex;
+    height: 100%;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .navbar--link,
+  .navbar--log-in {
+    border: 1px solid gold;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .navbar--log-in {
+    padding-inline: 20px;
+    border-radius: 3px;
+    height: 80%;
+    background-color: rgba(55, 147, 252, 0.2);
+    color: rgb(46, 126, 217);
+  }
+
+  .navbar--link {
+    display: flex;
+    align-items: center;
+    height: 90%;
+    letter-spacing: 0.1em;
+  }
+
+  a {
+    color: #888888;
+    text-decoration: none;
+  }
+}

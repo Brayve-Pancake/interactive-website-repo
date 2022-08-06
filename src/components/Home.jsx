@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import "./home.css";
+import "../components-css/home.css";
 
 export default function Home(props) {
-  useEffect(() => {
-    console.log(props);
-  });
+  // useEffect(() => {
+  //   console.log(props);
+  // });
 
   return (
     <div className="home">
