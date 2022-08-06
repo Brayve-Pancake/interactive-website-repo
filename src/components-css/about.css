@@ -1,0 +1,51 @@
+.about {
+  padding: 5%;
+}
+
+.about > h1 {
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.about > p {
+  margin-top: 15px;
+  font-size: 0.8em;
+  line-height: 1.7em;
+}
+
+.about--ulist-title {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.about--ulist {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 0.9em;
+  line-height: 2em;
+  list-style-position: inside;
+  text-indent: -1.5em;
+  padding-inline-start: 1.8em;
+}
+
+.about--ulist > li > span {
+  position: relative;
+  left: -0.6em;
+}
+
+.about--bold {
+  font-weight: 600;
+}
+
+.about--img {
+  width: 100%;
+}
+
+.about--a {
+  color: #5da3fd;
+  text-decoration: underline;
+}
+
+@media (min-device-width: 1200px) {
+}
