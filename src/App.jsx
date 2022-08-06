@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import "./App.css";
 
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -30,7 +31,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>App</h1>
       <Navbar isDesktop={isDesktop} />
       <Routes>
         <Route path="/" element={<Home images={bannerData.Details} />} />
