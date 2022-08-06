@@ -15,21 +15,25 @@ function App() {
     query: "(min-device-width: 1200px)",
   });
 
-  const bannerUrl =
+  const apiUrl =
     "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details";
 
   useEffect(() => {
-    fetch(bannerUrl)
+    fetch(apiUrl)
       .then((result) => result.json())
       .then((data) => setBannerData(data));
   }, []);
+
+  // useEffect(() => {
+  //   console.log("App render");
+  // });
 
   return (
     <div className="App">
       <h1>App</h1>
       <Navbar isDesktop={isDesktop} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home images={bannerData.Details} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

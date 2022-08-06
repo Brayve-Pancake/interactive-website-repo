@@ -1,0 +1,10 @@
+.home {
+  width: 100%;
+  border: 1px solid red;
+}
+
+.home--banner-one {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
