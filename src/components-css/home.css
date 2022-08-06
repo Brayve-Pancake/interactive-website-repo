@@ -176,21 +176,22 @@
 
 .home--c4-head > h2 {
   margin-top: 15px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .home--c4-head > h4 {
   margin-top: 10px;
   font-size: 1.1em;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .home--c4 > p {
   margin-top: 20px;
+  font-size: 0.9em;
 }
 
 .first-para {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .home--contact.c4 {
@@ -301,5 +302,24 @@
 
   .home--banner-one.c3 {
     object-position: 50% 10%;
+  }
+
+  /* Fourth and Final */
+
+  .home--c4 {
+    padding-inline: 15%;
+  }
+
+  .home--c4-head {
+    text-align: center;
+  }
+
+  .home--c4 > p {
+    font-size: 0.9em;
+    columns: 3;
+  }
+
+  .home--contact.c4 {
+    align-self: center;
   }
 }

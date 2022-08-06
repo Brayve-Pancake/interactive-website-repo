@@ -96,7 +96,7 @@ export default function Home(props) {
       <div className="home--c4">
         <div className="home--c4-head">
           <h2>Dolor ipsum amet, lorem loreum non</h2>
-          <h4>Nisi illuminati porta lorem mollis</h4>
+          <h4>taria illuminati porta lorem mollis</h4>
         </div>
         <p>
           <span className="first-para">
@@ -104,8 +104,7 @@ export default function Home(props) {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod
             nisi porta lorem mollis aliquam. Mattis rhoncus urna neque viverra
             justo nec. Dignissim sodales ut eu sem integer vitae. Varius vel
-            pharetra vel turpis nunc eget lorem dolor. Nisi illuminati porta
-            lorem mollis aliquam. Dignissim sodales ut eu sem integer vitae.
+            pharetra vel turpis nunc eget lorem dolor.
           </span>
           <br></br>
           <br></br>
@@ -113,7 +112,9 @@ export default function Home(props) {
           nisi porta lorem mollis aliquam. Mattis rhoncus urna neque viverra
           justo nec. Dignissim sodales ut eu sem integer vitae. Varius vel
           pharetra vel turpis nunc eget lorem dolor. Nisi illuminati porta lorem
-          mollis aliquam. Dignissim sodales ut eu sem integer vitae.
+          mollis aliquam. Dignissim sodales ut eu sem integer vitae.Nisi
+          illuminati porta lorem mollis aliquam. Dignissim sodales ut eu sem
+          integer vitae.
           <br></br>
           <br></br>
           Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -122,7 +123,9 @@ export default function Home(props) {
           sodales ut eu sem integer vitae. Dignissim sodales ut eu sem integer
           vitae. Varius vel pharetra vel turpis nunc eget lorem dolor. Nisi
           illuminati porta lorem mollis aliquam. Dignissim sodales ut eu sem
-          integer vitae.
+          integer vitae. Nisi illuminati porta lorem mollis aliquam. Dignissim
+          sodales ut eu sem integer vitae.Nisi illuminati porta lorem mollis
+          aliquam. Dignissim sodales ut eu sem integer vitae.
         </p>
         <br></br>
         <div className="home--contact c4">
