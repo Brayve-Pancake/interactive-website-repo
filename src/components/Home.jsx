@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import "../components-css/home.css";
-import { Link } from "react-router-dom";
 import LinkButton from "./LinkButton";
 
 export default function Home(props) {
@@ -94,12 +92,12 @@ export default function Home(props) {
           </div>
         </div>
       </div>
+
       <div className="home--c4">
         <div className="home--c4-head">
           <h2>Dolor ipsum amet, lorem loreum non</h2>
           <h4>Nisi illuminati porta lorem mollis</h4>
         </div>
-
         <p>
           <span className="first-para">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
