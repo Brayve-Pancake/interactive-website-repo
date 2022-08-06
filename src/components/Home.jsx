@@ -31,30 +31,38 @@ export default function Home(props) {
         ) : (
           <p>Loading...</p>
         )}
-        <div className="home--c2-card">
-          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-          <p>
+        <div className="home--c2-text">
+          <h2 className="home--c2-title">
+            Justo ipsum dolor sit amet, consectetur amet
+          </h2>
+          <p className="home--c2-para">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod
             nisi porta lorem mollis aliquam. Mattis rhoncus urna neque viverra
             justo nec. Dignissim sodales ut eu sem integer vitae. Varius vel
-            pharetra vel turpis nunc eget lorem dolor. Mauris pharetra et
-            ultrices neque. Urna molestie at elementum eu facilisis sed odio.
-            Enim lobortis scelerisque fermentum dui faucibus. Ullamcorper eget
-            nulla facilisi etiam dignissim diam quis enim lobortis. Pellentesque
-            eu tincidunt tortor aliquam nulla. Tellus cras adipiscing enim eu
-            turpis egestas pretium aenean pharetra. Arcu vitae elementum
-            curabitur vitae nunc sed. Gravida rutrum quisque non tellus orci ac.
-            Quam viverra orci sagittis eu volutpat odio facilisis mauris sit.
+            pharetra vel turpis nunc.
           </p>
-          <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+          <ul className="home--c2-ulist">
+            <li className="home--c2-list">
+              <span>Dolor sit amet consectetur adipisicing elit.</span>
+            </li>
+            <li className="home--c2-list">
+              <span>
+                Lorem ipsum dolor sit, amet consectetur adipisicing neque.
+              </span>
+            </li>
+            <li className="home--c2-list">
+              <span>Mattis rhoncus urna neque viverra justo.</span>
+            </li>
+            <li className="home--c2-list">
+              <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elitusem.
+              </span>
+            </li>
           </ul>
-          <button>Learn more</button>
+          <div className="home--learn-more">
+            <LinkButton url="/about" text="Learn more" />
+          </div>
         </div>
       </div>
       <div className="home--c3">

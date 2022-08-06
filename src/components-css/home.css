@@ -2,6 +2,8 @@
   width: 100%;
   border: 1px solid red;
 }
+
+/* First Card */
 .home--c1 {
   position: relative;
   height: 400px;
@@ -47,11 +49,64 @@
   font-weight: 500;
 }
 
+/* Second Card */
+/* Second Card */
+/* Second Card */
+
+.home--c2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 5%;
+}
+
 .home--banner-two {
+  padding-top: 5vh;
   object-fit: cover;
-  width: 80%;
+  width: 100%;
   height: auto;
 }
+
+.home--c2-text {
+  color: #444444;
+}
+
+.home--c2-title {
+  margin-top: 20px;
+  font-size: 1.3em;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+.home--c2-para {
+  margin-top: 20px;
+  font-size: 0.85em;
+  line-height: 2em;
+}
+
+.home--c2-ulist {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 0.75em;
+  line-height: 2em;
+  list-style-position: inside;
+  text-indent: -1.5em;
+  padding-inline-start: 1.8em;
+}
+
+.home--c2-ulist > li > span {
+  position: relative;
+  left: -0.6em;
+}
+
+.home--learn-more {
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
+/* Third Card */
+/* Third Card */
+/* Third Card */
 
 .home--banner-three {
   object-fit: cover;
