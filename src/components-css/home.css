@@ -61,7 +61,7 @@
 }
 
 .home--banner-two {
-  padding-top: 5vh;
+  padding-top: 4.5vh;
   object-fit: cover;
   width: 100%;
   height: auto;
@@ -87,7 +87,7 @@
 .home--c2-ulist {
   margin-top: 20px;
   font-weight: 600;
-  font-size: 0.75em;
+  font-size: 0.7em;
   line-height: 2em;
   list-style-position: inside;
   text-indent: -1.5em;
@@ -101,20 +101,104 @@
 
 .home--learn-more {
   margin-top: 20px;
-  padding-bottom: 30px;
 }
 
 /* Third Card */
 /* Third Card */
 /* Third Card */
+
+.home--c1 {
+  position: relative;
+  height: 400px;
+  z-index: 1;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+}
+.home--c3 {
+  margin-top: 25px;
+  position: relative;
+  height: 440px;
+}
 
 .home--banner-three {
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.home--c3-overlay {
+  border: 1px solid green;
+  position: absolute;
+  padding: 5%;
+  top: 10%;
+  bottom: 10%;
+  left: 5%;
+  right: 5%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.home--c3-overlay > h1 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.home--c3-overlay > p {
+  font-size: 0.75em;
+  line-height: 1.8em;
+}
+
+.home--contact.c3 > .linkButton {
+  background-color: #e8f0fd;
+}
+.home--contact.c3 > .linkButton > a {
+  color: #4990f9;
+}
+
+/* Fourth and Final Card :) */
+
+.home--c4 {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home--c4-head {
+  text-align: center;
+}
+
+.home--c4-head > h2 {
+  margin-top: 15px;
+  font-weight: 400;
+}
+
+.home--c4-head > h4 {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.home--c4 > p {
+  margin-top: 20px;
+}
+
+.first-para {
+  font-weight: 600;
+}
+
+.home--contact.c4 {
+  margin-bottom: 20px;
 }
 
 @media (min-device-width: 1200px) {
+  /* First Card */
   .home--overlay {
     border: 1px solid blue;
     left: 15%;
@@ -128,6 +212,7 @@
     background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   }
 
+  /* applied to all home buttons */
   .home--contact {
     border: 1px solid red;
     width: 120px;
@@ -135,5 +220,86 @@
 
   .home--banner-one {
     object-position: 50% 30%;
+  }
+
+  /* Second Card */
+  .home--c2 {
+    margin-top: 30px;
+    padding-inline: 15%;
+  }
+
+  .home--c2-title {
+    font-size: 1.2em;
+    line-height: 1.3em;
+  }
+
+  .home--c2-para {
+    margin-top: 15px;
+    font-size: 0.65em;
+    line-height: 1.6em;
+  }
+
+  .home--c2-ulist {
+    margin-top: 15px;
+    line-height: 1.9em;
+  }
+
+  .container-re-order {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7%;
+  }
+
+  .col2 {
+    width: 50%;
+    order: 1;
+  }
+
+  .col1 {
+    width: 50%;
+    order: 2;
+  }
+
+  .home--learn-more {
+    padding-bottom: 0px;
+    margin-top: 15px;
+  }
+
+  .home--banner-two {
+    padding-top: 0vh;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Third Card */
+
+  .home--c3 {
+    height: 400px;
+  }
+
+  .home--c3-overlay {
+    padding: 2.5%;
+    top: 10%;
+    bottom: 10%;
+    left: 15%;
+    right: 50%;
+    gap: 25px;
+  }
+
+  .home--c3-overlay > h1 {
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+
+  .home--c3-overlay > p {
+    font-size: 0.65em;
+    line-height: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .home--banner-one.c3 {
+    object-position: 50% 10%;
   }
 }
