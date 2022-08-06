@@ -48,6 +48,7 @@
     align-items: center;
     height: 90%;
     letter-spacing: 0.1em;
+    font-size: 0.8em;
   }
 
   /* This if for the <Link> ideally I don't want to apply to all <a> */
