@@ -1,0 +1,21 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  color: #888888;
+}
+.footer--hr {
+  width: 90%;
+}
+.footer--a {
+  color: #888888;
+  text-decoration: underline;
+}
+@media (min-device-width: 1200px) {
+  .footer {
+    width: 90%;
+    align-items: flex-end;
+  }
+}

@@ -50,6 +50,7 @@
     letter-spacing: 0.1em;
   }
 
+  /* This if for the <Link> ideally I don't want to apply to all <a> */
   a {
     color: #888888;
     text-decoration: none;
