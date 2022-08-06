@@ -1,0 +1,16 @@
+.linkButton {
+  border: 1px solid peachpuff;
+  background-color: #4990f9;
+  border-radius: 4px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.linkButton > a {
+  padding: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
