@@ -6,31 +6,32 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     FullName: "",
     EmailAddress: "",
-    PhoneNumbers: ["", ""],
+    PhoneNumberOne: "",
+    PhoneNumberTwo: "",
     Message: "",
     bIncludeAddressDetails: false,
-    AddressDetails: {
-      AddressLine1: "",
-      AddressLine2: "",
-      CityTown: "",
-      StateCounty: "",
-      Postcode: "",
-      Country: "",
-    },
+    AddressLine1: "",
+    AddressLine2: "",
+    CityTown: "",
+    StateCounty: "",
+    Postcode: "",
+    Country: "",
   });
-
-  function toggleAdditionalPhone() {
-    setAdditionalPhone((prevState) => !prevState);
-  }
 
   function handleFormChange(event) {
     const { name, value, type, checked } = event.target;
+    console.log(event.target.name);
+    console.log(formData);
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
         [name]: type === "checkbox" ? checked : value,
       };
     });
+  }
+
+  function toggleAdditionalPhone() {
+    setAdditionalPhone((prevState) => !prevState);
   }
 
   return (
@@ -52,12 +53,11 @@ export default function Contact() {
                   // input details
                   required
                   type="text"
-                  className="form--input"
+                  className="form--input formInfo"
                   // for handling/setting data
                   name="FullName"
                   value={formData.FullName}
                   onChange={handleFormChange}
-                  // to remove
                 />
               </div>
             </div>
@@ -84,8 +84,8 @@ export default function Contact() {
                   id="phoneOne"
                   type="tel"
                   className="form--input"
-                  name="PhoneNumber1"
-                  value={formData.PhoneNumbers[0]}
+                  name="PhoneNumberOne"
+                  value={formData.PhoneNumberOne}
                   onChange={handleFormChange}
                 />
               </div>
@@ -99,8 +99,8 @@ export default function Contact() {
                     id="phoneTwo"
                     type="tel"
                     className="form--input"
-                    name="PhoneNumber2"
-                    value={formData.PhoneNumbers[1]}
+                    name="PhoneNumberTwo"
+                    value={formData.PhoneNumberTwo}
                     onChange={handleFormChange}
                   />
                 </div>
@@ -155,7 +155,7 @@ export default function Contact() {
                           type="text"
                           className="form--input"
                           name="AddressLine1"
-                          value={formData.AddressDetails.AddressLine1}
+                          value={formData.AddressLine1}
                           onChange={handleFormChange}
                         />
                       </div>
@@ -171,7 +171,7 @@ export default function Contact() {
                           type="text"
                           className="form--input"
                           name="AddressLine2"
-                          value={formData.AddressDetails.AddressLine2}
+                          value={formData.AddressLine2}
                           onChange={handleFormChange}
                         />
                       </div>
@@ -184,7 +184,7 @@ export default function Contact() {
                           type="text"
                           className="form--input"
                           name="CityTown"
-                          value={formData.AddressDetails.CityTown}
+                          value={formData.CityTown}
                           onChange={handleFormChange}
                         />
                       </div>
@@ -197,7 +197,7 @@ export default function Contact() {
                           type="text"
                           className="form--input"
                           name="StateCounty"
-                          value={formData.AddressDetails.StateCounty}
+                          value={formData.StateCounty}
                           onChange={handleFormChange}
                         />
                       </div>
@@ -210,7 +210,7 @@ export default function Contact() {
                           type="text"
                           className="form--input"
                           name="Postcode"
-                          value={formData.AddressDetails.Postcode}
+                          value={formData.Postcode}
                           onChange={handleFormChange}
                         />
                       </div>
@@ -223,7 +223,7 @@ export default function Contact() {
                           type="text"
                           className="form--input"
                           name="Country"
-                          value={formData.AddressDetails.AddressLine2}
+                          value={formData.Country}
                           onChange={handleFormChange}
                         />
                       </div>
