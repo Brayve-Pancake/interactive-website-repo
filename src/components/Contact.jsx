@@ -28,10 +28,17 @@ export default function Contact() {
   // });
 
   function reconstructData() {
+    let phoneNumbersArray = [];
+    if (formData.PhoneNumberOne !== "") {
+      phoneNumbersArray.push(formData.PhoneNumberOne);
+    }
+    if (formData.PhoneNumberTwo !== "") {
+      phoneNumbersArray.push(formData.PhoneNumberTwo);
+    }
     return JSON.stringify({
       FullName: formData.FullName,
       EmailAddress: formData.EmailAddress,
-      PhoneNumbers: [formData.PhoneNumberOne, formData.PhoneNumberTwo],
+      PhoneNumbers: phoneNumbersArray,
       Message: formData.Message,
       bIncludeAddressDetails: formData.bIncludeAddressDetails,
       AddressDetails: {
@@ -61,7 +68,33 @@ export default function Contact() {
     setAdditionalPhone((prevState) => !prevState);
   }
 
+  // VALIDATION
+
+  function validate(e) {
+    e.preventDefault();
+    const username = document.getElementById("username");
+    const emailAddress = document.getElementById("email-address");
+    if (username.value === "") {
+      alert("Please enter your username.");
+      username.focus();
+      return false;
+    }
+    if (emailAddress.value === "") {
+      alert("Please enter your email address.");
+      emailAddress.focus();
+      return false;
+    }
+
+    return true;
+  }
+
   function handleSubmit(event) {
+    //Add checking functions for validity
+    function isValidPostcode(p) {
+      var postcodeRegEx = /[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/i;
+      return postcodeRegEx.test(p);
+    }
+
     event.preventDefault();
     alert("A form was submitted: " + reconstructData());
     console.log(reconstructData());
