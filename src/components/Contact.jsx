@@ -18,14 +18,10 @@ export default function Contact() {
   };
   const [additionalPhone, setAdditionalPhone] = useState(false);
   const [formData, setFormData] = useState(defaultData);
-  const [message, setMessage] = useState([]);
   const endpointUrl =
     "https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit";
 
-  // useEffect(() => {
-  //   console.log(message);
-
-  // });
+  const checkedBox = formData.bIncludeAddressDetails;
 
   function reconstructData() {
     let phoneNumbersArray = [];
@@ -57,6 +53,19 @@ export default function Contact() {
     console.log(event.target.name);
     console.log(formData);
     setFormData((prevFormData) => {
+      // Deselect and clear data
+      if (type === "checkbox" && !checked) {
+        return {
+          ...prevFormData,
+          [name]: checked,
+          AddressLine1: "",
+          AddressLine2: "",
+          CityTown: "",
+          StateCounty: "",
+          Postcode: "",
+          Country: "",
+        };
+      }
       return {
         ...prevFormData,
         [name]: type === "checkbox" ? checked : value,
@@ -70,32 +79,45 @@ export default function Contact() {
 
   // VALIDATION
 
+  // ^([A-Za-z][A-Ha-hJ-Yj-y]?[0-9][A-Za-z0-9]? ?[0-9][A-Za-z]{2}|[Gg][Ii][Rr] ?0[Aa]{2})$
+  // ^([A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}|GIR ?0A{2})$
+
+  function isValidPostcode(p) {
+    var postcodeRegEx = /[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/i;
+    return postcodeRegEx.test(p);
+  }
+
   function validate(e) {
-    e.preventDefault();
-    const username = document.getElementById("username");
-    const emailAddress = document.getElementById("email-address");
-    if (username.value === "") {
-      alert("Please enter your username.");
-      username.focus();
+    if (checkedBox && isValidPostcode(formData.Postcode) === false) {
+      alert("invalid postcode");
       return false;
     }
-    if (emailAddress.value === "") {
-      alert("Please enter your email address.");
-      emailAddress.focus();
-      return false;
-    }
+
+    // input.setAttribute("required", "");
+    // e.preventDefault();
+    // const username = document.getElementById("username");
+    // const emailAddress = document.getElementById("email-address");
+    // if (username.value === "") {
+    //   alert("Please enter your username.");
+    //   username.focus();
+    //   return false;
+    // }
+    // if (emailAddress.value === "") {
+    //   alert("Please enter your email address.");
+    //   emailAddress.focus();
+    //   return false;
+    // }
 
     return true;
   }
 
   function handleSubmit(event) {
     //Add checking functions for validity
-    function isValidPostcode(p) {
-      var postcodeRegEx = /[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/i;
-      return postcodeRegEx.test(p);
+    event.preventDefault();
+    if (validate(event) === false) {
+      return;
     }
 
-    event.preventDefault();
     alert("A form was submitted: " + reconstructData());
     console.log(reconstructData());
 
@@ -221,16 +243,17 @@ export default function Contact() {
                   Add address details
                 </label>
               </div>
-              {formData.bIncludeAddressDetails && (
+              {checkedBox && (
                 <div>
                   <div className="grid-container-2">
                     <div className="container-width">
                       <div>
                         <label htmlFor="addressLine1">Address line 1</label>
                         <input
+                          required
                           id="addressLine1"
                           type="text"
-                          className="form--input"
+                          className="form--input required-toggle"
                           name="AddressLine1"
                           value={formData.AddressLine1}
                           onChange={handleFormChange}
@@ -257,9 +280,10 @@ export default function Contact() {
                       <div>
                         <label htmlFor="cityTown">City/Town</label>
                         <input
+                          required
                           id="cityTown"
                           type="text"
-                          className="form--input"
+                          className="form--input required-toggle"
                           name="CityTown"
                           value={formData.CityTown}
                           onChange={handleFormChange}
@@ -268,11 +292,12 @@ export default function Contact() {
                     </div>
                     <div>
                       <div>
-                        <label htmlFor="StateCounty">State/County</label>
+                        <label htmlFor="stateCounty">State/County</label>
                         <input
-                          id="StateCounty"
+                          required
+                          id="stateCounty"
                           type="text"
-                          className="form--input"
+                          className="form--input required-toggle"
                           name="StateCounty"
                           value={formData.StateCounty}
                           onChange={handleFormChange}
@@ -283,9 +308,10 @@ export default function Contact() {
                       <div>
                         <label htmlFor="postcode">Postcode</label>
                         <input
+                          required
                           id="postcode"
                           type="text"
-                          className="form--input"
+                          className="form--input required-toggle"
                           name="Postcode"
                           value={formData.Postcode}
                           onChange={handleFormChange}
@@ -296,9 +322,10 @@ export default function Contact() {
                       <div>
                         <label htmlFor="country">Country</label>
                         <input
+                          required
                           id="country"
                           type="text"
-                          className="form--input"
+                          className="form--input required-toggle"
                           name="Country"
                           value={formData.Country}
                           onChange={handleFormChange}
