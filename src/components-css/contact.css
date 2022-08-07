@@ -26,15 +26,12 @@
   display: grid;
   align-content: space-between;
   grid-template-columns: 1fr 1fr; /*Make the grid smaller than the container*/
-  column-gap: 10px;
+  column-gap: 20px;
   row-gap: 10px;
-  background-color: #2196f3;
   padding: 0px;
-  border: solid red 2px;
 }
 .grid-container > div,
 .grid-container-2 > div {
-  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
 }
@@ -46,9 +43,23 @@
 }
 .form--input {
   width: 100%;
+  margin-top: 0.4em;
 }
 .container-width {
   grid-column: 1/-1;
+}
+
+div > label {
+  font-size: 0.8em;
+  color: #555555;
+}
+
+.contact--fullName {
+  padding-top: 20px;
+}
+
+.container-width > div {
+  margin-top: 10px;
 }
 
 /* For styling form */
@@ -56,12 +67,43 @@
   color: #888888;
 }
 
+.contact--message {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.contact--message > .span-grey {
+  font-size: 0.8em;
+}
+
+.contact--button {
+  margin-top: 10px;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: rgb(67, 117, 252);
+  background-color: rgb(224, 233, 255);
+  border: 0;
+  border-radius: 3px;
+  padding: 12px;
+}
+
+.contact--button.submit {
+  margin-top: 25px;
+  margin-bottom: 40px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(83, 144, 248);
+}
+
+.textarea {
+  height: 120px;
+}
+
 /* Make the buttons look nice */
 textarea,
 input {
-  border-radius: 4px;
-  border: 1px solid #707070;
-  background: #f0f0f0;
+  border-radius: 3px;
+  border: 0.5px solid #b0b0b0;
+  background: #fafafe;
   height: 3em;
 }
 
@@ -77,10 +119,13 @@ input:focus {
 /* Checkbox alignment */
 .checkbox-wrapper {
   white-space: nowrap;
+  padding-top: 40px;
+  padding-bottom: 20px;
   display: flex;
   align-items: center;
-
   height: 2em;
+  margin-bottom: -15px;
+  font-weight: 600;
 }
 
 .checkbox-label {

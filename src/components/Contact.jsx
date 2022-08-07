@@ -189,7 +189,7 @@ export default function Contact() {
         <form onSubmit={handleSubmit}>
           <div className="grid-container">
             <div className="container-width">
-              <div>
+              <div className="contact--fullName">
                 <label htmlFor="fullName">Full name</label>
                 <input
                   // for label
@@ -208,7 +208,7 @@ export default function Contact() {
             </div>
             <div className="container-width">
               <div>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email address</label>
                 <input
                   id="email"
                   required
@@ -223,7 +223,10 @@ export default function Contact() {
             <div className="container-width">
               <div>
                 <label htmlFor="phoneOne">
-                  Phone number 01 <span className="span-grey">- optional</span>
+                  Phone number 01{" "}
+                  <span className="span-grey">
+                    <i>- optional</i>
+                  </span>
                 </label>
                 <input
                   id="phoneOne"
@@ -241,7 +244,9 @@ export default function Contact() {
                 <div>
                   <label htmlFor="phoneTwo">
                     Phone number 02
-                    <span className="span-grey">- optional</span>
+                    <span className="span-grey">
+                      <i> - optional</i>
+                    </span>
                   </label>
                   <input
                     id="phoneTwo"
@@ -256,16 +261,19 @@ export default function Contact() {
             </div>
 
             <div className="container-width">
-              <button onClick={toggleAdditionalPhone}>
-                Add new phone number
+              <button
+                className="contact--button"
+                onClick={toggleAdditionalPhone}
+              >
+                {!additionalPhone ? "Add" : "Hide"} new phone number
               </button>
             </div>
             <div className="container-width">
               <div className="textarea">
-                <label htmlFor="message">
+                <label className="contact--message" htmlFor="message">
                   <span>Message</span>
                   <span className="span-grey">
-                    Maximum text length is 500 character
+                    Maximum text length is 500 characters
                   </span>
                 </label>
                 <textarea
@@ -316,7 +324,9 @@ export default function Contact() {
                       <div>
                         <label htmlFor="addressLine2">
                           Address line 2
-                          <span className="span-grey">- optional</span>
+                          <span className="span-grey">
+                            <i> - optional</i>
+                          </span>
                         </label>
                         <input
                           id="addressLine2"
@@ -389,7 +399,9 @@ export default function Contact() {
               )}
             </div>
             <div className="container-width submit">
-              <button type="submit">Submit</button>
+              <button className="contact--button submit" type="submit">
+                Submit
+              </button>
             </div>
           </div>
         </form>
