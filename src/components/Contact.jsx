@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import messageIcon from "../assets/Icon_Submit.svg";
 import "../components-css/contact.css";
 import "../components-css/checkbox.css";
 
@@ -400,6 +401,7 @@ export default function Contact() {
             </div>
             <div className="container-width submit">
               <button className="contact--button submit" type="submit">
+                <img className="messageIcon" src={messageIcon} />
                 Submit
               </button>
             </div>

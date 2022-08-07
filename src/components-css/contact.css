@@ -88,10 +88,18 @@ div > label {
 }
 
 .contact--button.submit {
+  position: relative;
   margin-top: 25px;
   margin-bottom: 40px;
   color: rgb(255, 255, 255);
   background-color: rgb(83, 144, 248);
+}
+
+.messageIcon {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  width: 15px;
 }
 
 .textarea {
