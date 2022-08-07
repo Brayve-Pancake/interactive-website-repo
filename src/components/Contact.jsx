@@ -86,6 +86,11 @@ export default function Contact() {
     var postcodeRegEx = /[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/i;
     return postcodeRegEx.test(p);
   }
+  // Passes API (very basic) J@C.B <-- this will work :)
+  function isValidEmail(p) {
+    var emailRegEx = /(.+)@(.+){1,}\.(.+){1,}/;
+    return emailRegEx.test(p);
+  }
 
   function validate(e) {
     if (checkedBox && isValidPostcode(formData.Postcode) === false) {
@@ -93,6 +98,18 @@ export default function Contact() {
       return false;
     }
 
+    if (
+      formData.PhoneNumberOne.length > 20 ||
+      formData.PhoneNumberTwo.length > 20
+    ) {
+      alert("Phone number is too long (max 20 char)");
+      return false;
+    }
+
+    if (isValidEmail(formData.EmailAddress) === false) {
+      alert("Your email is incorrectly formatted :)");
+      return false;
+    }
     // input.setAttribute("required", "");
     // e.preventDefault();
     // const username = document.getElementById("username");
