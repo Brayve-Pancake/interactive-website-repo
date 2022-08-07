@@ -110,6 +110,13 @@ export default function Contact() {
       alert("Your email is incorrectly formatted :)");
       return false;
     }
+
+    if (formData.Message.length > 500) {
+      alert(
+        "We appreciate your detailed message, but it is too long for our system. Please reduce it's length"
+      );
+      return false;
+    }
     // input.setAttribute("required", "");
     // e.preventDefault();
     // const username = document.getElementById("username");
