@@ -51,20 +51,44 @@
   grid-column: 1/-1;
 }
 
+/* For styling form */
+.span-grey {
+  color: #888888;
+}
+
+/* Make the buttons look nice */
+textarea,
+input {
+  border-radius: 4px;
+  border: 1px solid #707070;
+  background: #f0f0f0;
+  height: 3em;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0px 0px 3px 2px #acacac;
+}
+
 /* Checkbox alignment */
 .checkbox-wrapper {
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+
+  height: 2em;
 }
-.checkbox {
-  display: inline-block;
-}
+
 .checkbox-label {
   white-space: normal;
   display: inline-block;
   padding-left: 0.5em;
 }
-
-/* For styling form */
-.span-grey {
-  color: #888888;
+input:focus.checkbox {
+  box-shadow: 0px 0px 0px 0px #acacac;
 }
+/* remove styling from checkbox */

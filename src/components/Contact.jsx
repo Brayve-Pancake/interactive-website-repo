@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../components-css/contact.css";
+import "../components-css/checkbox.css";
 
 export default function Contact() {
   const defaultData = {
@@ -77,10 +78,30 @@ export default function Contact() {
     setAdditionalPhone((prevState) => !prevState);
   }
 
+  function returnFirstChar() {
+    console.log(formData.FullName.charAt(0));
+    return formData.FullName.charAt(0);
+  }
+
   // VALIDATION
 
   // ^([A-Za-z][A-Ha-hJ-Yj-y]?[0-9][A-Za-z0-9]? ?[0-9][A-Za-z]{2}|[Gg][Ii][Rr] ?0[Aa]{2})$
   // ^([A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}|GIR ?0A{2})$
+
+  const redStyle = {
+    boxShadow: "1px 2px 9px #F4AAB9",
+  };
+  const greenStyle = {
+    boxShadow: "1px 2px 9px #50C878",
+  };
+
+  function mesValidLength(mesasge) {
+    return mesasge.length <= 500;
+  }
+
+  function numValidLength(number) {
+    return number.length <= 20;
+  }
 
   function isValidPostcode(p) {
     var postcodeRegEx = /[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/i;
@@ -138,7 +159,7 @@ export default function Contact() {
   function handleSubmit(event) {
     //Add checking functions for validity
     event.preventDefault();
-    if (validate(event) === false) {
+    if (validate() === false) {
       return;
     }
 
@@ -181,6 +202,7 @@ export default function Contact() {
                   name="FullName"
                   value={formData.FullName}
                   onChange={handleFormChange}
+                  style={returnFirstChar() ? { backgroundColor: "blue" } : {}}
                 />
               </div>
             </div>
@@ -210,12 +232,15 @@ export default function Contact() {
                   name="PhoneNumberOne"
                   value={formData.PhoneNumberOne}
                   onChange={handleFormChange}
+                  style={
+                    !numValidLength(formData.PhoneNumberOne) ? redStyle : {}
+                  }
                 />
               </div>
               {additionalPhone && (
                 <div>
                   <label htmlFor="phoneTwo">
-                    Phone number 02{" "}
+                    Phone number 02
                     <span className="span-grey">- optional</span>
                   </label>
                   <input
@@ -255,14 +280,17 @@ export default function Contact() {
             </div>
             <div className="container-width check">
               <div className="text-left checkbox-wrapper">
-                <input
-                  id="addressCheckbox"
-                  type="checkbox"
-                  className="checkbox"
-                  name="bIncludeAddressDetails"
-                  value={formData.bIncludeAddressDetails}
-                  onChange={handleFormChange}
-                />
+                <label class="container">
+                  <input
+                    id="addressCheckbox"
+                    type="checkbox"
+                    className="checkbox"
+                    name="bIncludeAddressDetails"
+                    value={formData.bIncludeAddressDetails}
+                    onChange={handleFormChange}
+                  />
+                  <span class="checkmark"></span>
+                </label>
                 <label htmlFor="addressCheckbox" className="checkbox-label">
                   Add address details
                 </label>
