@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../components-css/contact.css";
 
 export default function Contact() {
-  const [additionalPhone, setAdditionalPhone] = useState(false);
-  const [formData, setFormData] = useState({
+  const defaultData = {
     FullName: "",
     EmailAddress: "",
     PhoneNumberOne: "",
@@ -16,7 +15,35 @@ export default function Contact() {
     StateCounty: "",
     Postcode: "",
     Country: "",
-  });
+  };
+  const [additionalPhone, setAdditionalPhone] = useState(false);
+  const [formData, setFormData] = useState(defaultData);
+  const [message, setMessage] = useState([]);
+  const endpointUrl =
+    "https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit";
+
+  // useEffect(() => {
+  //   console.log(message);
+
+  // });
+
+  function reconstructData() {
+    return JSON.stringify({
+      FullName: formData.FullName,
+      EmailAddress: formData.EmailAddress,
+      PhoneNumbers: [formData.PhoneNumberOne, formData.PhoneNumberTwo],
+      Message: formData.Message,
+      bIncludeAddressDetails: formData.bIncludeAddressDetails,
+      AddressDetails: {
+        AddressLine1: formData.AddressLine1,
+        AddressLine2: formData.AddressLine2,
+        CityTown: formData.CityTown,
+        StateCounty: formData.StateCounty,
+        Postcode: formData.Postcode,
+        Country: formData.Country,
+      },
+    });
+  }
 
   function handleFormChange(event) {
     const { name, value, type, checked } = event.target;
@@ -34,6 +61,23 @@ export default function Contact() {
     setAdditionalPhone((prevState) => !prevState);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert("A form was submitted: " + reconstructData());
+    console.log(reconstructData());
+
+    fetch(endpointUrl, {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: reconstructData(),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }
+
   return (
     <div className="contact">
       <div className="contact--container">
@@ -42,8 +86,8 @@ export default function Contact() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic error
           distinctio placeat quae iste enim ad aliquam ab quia nulla?
         </p>
-        <form>
-          <div class="grid-container">
+        <form onSubmit={handleSubmit}>
+          <div className="grid-container">
             <div className="container-width">
               <div>
                 <label htmlFor="fullName">Full name</label>
