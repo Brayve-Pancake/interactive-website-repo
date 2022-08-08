@@ -402,11 +402,6 @@ export default function Contact() {
           </div>
         </form>
       </div>
-      {/* {checkedBox && (
-        <div className="image">
-          <img src={contactImage} alt="company logo" />
-        </div>
-      )} */}
     </div>
   );
 }

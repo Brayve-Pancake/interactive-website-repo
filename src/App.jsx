@@ -22,7 +22,10 @@ function App() {
   useEffect(() => {
     fetch(apiUrl)
       .then((result) => result.json())
-      .then((data) => setBannerData(data));
+      .then((data) => setBannerData(data))
+      .catch((error) => {
+        console.log("error", error);
+      });
   }, []);
 
   return (
