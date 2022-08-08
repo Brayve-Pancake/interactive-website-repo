@@ -37,10 +37,7 @@
 
 # This is what it looks like:
 
-![Wide homepage](./images-GH/SS-Wide1.png)
-
-![Mobile homepage](./images-GH/ss-mobile2.png)
-
-![Wide form](./images-GH/SS-Wide2.png)
-
-![Mobile form](./images-GH/ss-mobile1.png)
+<img src="./images-GH/SS-Wide1.png" alt="Wide homepage" width="1200">
+<img src="./images-GH/ss-mobile2.png" alt="Wide homepage" width="375">
+<img src="./images-GH/SS-Wide2.png" alt="Wide homepage" width="1200">
+<img src="./images-GH/ss-mobile1.png" alt="Wide homepage" width="375">
