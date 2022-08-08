@@ -53,8 +53,17 @@ export default function Home(props) {
             )}
           </SwiperSlide>
           <div className="home--overlay">
-            <h1>Lorem ipsum dolor</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            {props.images ? (
+              <h1>{props.images[0].Title}</h1>
+            ) : (
+              <h1>Lorem ipsum dolor</h1>
+            )}
+            {props.images ? (
+              <p>{props.images[0].Subtitle}</p>
+            ) : (
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            )}
+
             <div className="home--contact">
               <LinkButton url="/contact" text="Contact us" />
             </div>

@@ -21,7 +21,10 @@ function App() {
   useEffect(() => {
     fetch(apiUrl)
       .then((result) => result.json())
-      .then((data) => setBannerData(data))
+      .then((data) => {
+        console.log(data);
+        setBannerData(data);
+      })
       .catch((error) => {
         console.log("error", error);
       });
