@@ -60,11 +60,13 @@
   display: none;
 }
 
-Show the checkmark when checked .container input:checked ~ .checkmark:after {
+/* Show the checkmark when checked  */
+.container input:checked ~ .checkmark:after {
   display: block;
 }
 
-Style the checkmark/indicator .container .checkmark:after {
+/* Style the checkmark/indicator  */
+.container .checkmark:after {
   left: 9px;
   top: 5px;
   width: 0px;
