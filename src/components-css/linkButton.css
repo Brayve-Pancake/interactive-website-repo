@@ -4,9 +4,12 @@
   text-decoration: none;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .linkButton > a {
+  width: 100%;
+  text-align: center;
   padding: 10px;
   font-size: 0.8rem;
   font-weight: 700;
