@@ -191,7 +191,6 @@ export default function Contact() {
                   name="FullName"
                   value={formData.FullName}
                   onChange={handleFormChange}
-                  style={returnFirstChar() ? { backgroundColor: "blue" } : {}}
                 />
               </div>
             </div>
