@@ -78,6 +78,13 @@ export default function Contact() {
 
   function toggleAdditionalPhone() {
     setAdditionalPhone((prevState) => !prevState);
+    // Clear #2 on toggle
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        PhoneNumberTwo: "",
+      };
+    });
   }
 
   function returnFirstChar() {
@@ -86,15 +93,8 @@ export default function Contact() {
   }
 
   // VALIDATION
-
-  // ^([A-Za-z][A-Ha-hJ-Yj-y]?[0-9][A-Za-z0-9]? ?[0-9][A-Za-z]{2}|[Gg][Ii][Rr] ?0[Aa]{2})$
-  // ^([A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}|GIR ?0A{2})$
-
   const redStyle = {
     boxShadow: "1px 2px 9px #F4AAB9",
-  };
-  const greenStyle = {
-    boxShadow: "1px 2px 9px #50C878",
   };
 
   function mesValidLength(mesasge) {
@@ -106,12 +106,13 @@ export default function Contact() {
   }
 
   function isValidPostcode(p) {
-    var postcodeRegEx = /[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/i;
+    let postcodeRegEx = /[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/i;
     return postcodeRegEx.test(p);
   }
+
   // Passes API (very basic) J@C.B <-- this will work :)
   function isValidEmail(p) {
-    var emailRegEx = /(.+)@(.+){1,}\.(.+){1,}/;
+    let emailRegEx = /(.+)@(.+){1,}\.(.+){1,}/;
     return emailRegEx.test(p);
   }
 
@@ -122,44 +123,28 @@ export default function Contact() {
     }
 
     if (
-      formData.PhoneNumberOne.length > 20 ||
-      formData.PhoneNumberTwo.length > 20
+      !numValidLength(formData.PhoneNumberOne) ||
+      !numValidLength(formData.PhoneNumberTwo)
     ) {
       alert("Phone number is too long (max 20 char)");
       return false;
     }
 
-    if (isValidEmail(formData.EmailAddress) === false) {
+    if (!isValidEmail(formData.EmailAddress)) {
       alert("Your email is incorrectly formatted :)");
       return false;
     }
 
-    if (formData.Message.length > 500) {
+    if (!mesValidLength(formData.Message)) {
       alert(
         "We appreciate your detailed message, but it is too long for our system. Please reduce it's length"
       );
       return false;
     }
-    // input.setAttribute("required", "");
-    // e.preventDefault();
-    // const username = document.getElementById("username");
-    // const emailAddress = document.getElementById("email-address");
-    // if (username.value === "") {
-    //   alert("Please enter your username.");
-    //   username.focus();
-    //   return false;
-    // }
-    // if (emailAddress.value === "") {
-    //   alert("Please enter your email address.");
-    //   emailAddress.focus();
-    //   return false;
-    // }
-
     return true;
   }
 
   function handleSubmit(event) {
-    //Add checking functions for validity
     event.preventDefault();
     if (validate() === false) {
       return;
@@ -177,7 +162,9 @@ export default function Contact() {
       body: reconstructData(),
     })
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res);
+      });
   }
 
   return (
@@ -219,6 +206,12 @@ export default function Contact() {
                   name="EmailAddress"
                   value={formData.EmailAddress}
                   onChange={handleFormChange}
+                  style={
+                    formData.EmailAddress &&
+                    !isValidEmail(formData.EmailAddress)
+                      ? redStyle
+                      : {}
+                  }
                 />
               </div>
             </div>
@@ -257,6 +250,9 @@ export default function Contact() {
                     name="PhoneNumberTwo"
                     value={formData.PhoneNumberTwo}
                     onChange={handleFormChange}
+                    style={
+                      !numValidLength(formData.PhoneNumberTwo) ? redStyle : {}
+                    }
                   />
                 </div>
               )}
@@ -379,6 +375,12 @@ export default function Contact() {
                           name="Postcode"
                           value={formData.Postcode}
                           onChange={handleFormChange}
+                          style={
+                            formData.Postcode &&
+                            !isValidPostcode(formData.Postcode)
+                              ? redStyle
+                              : {}
+                          }
                         />
                       </div>
                     </div>
