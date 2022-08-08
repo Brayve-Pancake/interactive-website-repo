@@ -124,7 +124,7 @@ export default function Home(props) {
             lorem mollis aliquam. Dignissim sodales ut eu sem integer vitae.
           </p>
           <div className="home--contact c3">
-            <LinkButton url="/log-in" text="Log in" />
+            <LinkButton url="/" text="Log in" />
           </div>
         </div>
       </div>
