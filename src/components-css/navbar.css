@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 60px;
+  border-bottom: #ebebeb solid 2px;
 }
 
 .navbar--logo {
