@@ -1,5 +1,4 @@
 .navbar {
-  border: 1px solid green;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +7,6 @@
 
 .navbar--logo {
   width: 175px;
-  border: 1px solid gold;
   padding: 1em;
 }
 
@@ -30,7 +28,6 @@
 
   .navbar--link,
   .navbar--log-in {
-    border: 1px solid gold;
     font-weight: 700;
     cursor: pointer;
   }
@@ -42,6 +39,7 @@
     height: 70%;
     background-color: rgba(55, 147, 252, 0.2);
     color: rgb(46, 126, 217);
+    border: none;
   }
 
   .navbar--link {
