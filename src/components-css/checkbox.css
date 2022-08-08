@@ -35,6 +35,13 @@
   border: solid gray 1px;
 }
 
+/* Move the label to be inline */
+.checkbox-label {
+  white-space: normal;
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
   background-color: rgb(222, 222, 222);

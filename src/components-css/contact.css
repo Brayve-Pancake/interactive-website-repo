@@ -115,7 +115,7 @@ div > label {
   height: 120px;
 }
 
-/* Make the buttons look nice */
+/* Make the inputs look nice */
 textarea,
 input {
   border-radius: 3px;
@@ -124,12 +124,9 @@ input {
   height: 3em;
 }
 
-textarea:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
-}
-
-input:focus {
   box-shadow: 0px 0px 3px 2px #acacac;
 }
 
@@ -145,15 +142,7 @@ input:focus {
   font-weight: 600;
 }
 
-.checkbox-label {
-  white-space: normal;
-  display: inline-block;
-  padding-left: 0.5em;
-}
-input:focus.checkbox {
-  box-shadow: 0px 0px 0px 0px #acacac;
-}
-/* remove styling from checkbox */
+/* See checkbox.css*/
 
 @media (min-device-width: 1200px) {
   .contact--container {
