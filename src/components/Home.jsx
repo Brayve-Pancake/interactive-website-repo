@@ -1,26 +1,55 @@
 import "../components-css/home.css";
 import LinkButton from "./LinkButton";
 
-export default function Home(props) {
-  // useEffect(() => {
-  //   console.log(props);
-  // });
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "../components-css/swiperStyles.css";
+
+export default function Home(props) {
   return (
     <div className="home">
       <div className="home--c1">
-        {props.images ? (
-          <img className="home--banner-one" src={props.images[0].ImageUrl} />
-        ) : (
-          <p>Loading...</p>
-        )}
-        <div className="home--overlay">
-          <h1>Lorem ipsum dolor</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <div className="home--contact">
-            <LinkButton url="/contact" text="Contact us" />
+        <Swiper
+          pagination={{
+            dynamicBullets: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide className="with-gradient">
+            {props.images ? (
+              <img src={props.images[0].ImageUrl} />
+            ) : (
+              <p>Loading...</p>
+            )}
+          </SwiperSlide>
+          <SwiperSlide className="with-gradient">
+            {props.images ? (
+              <img src={props.images[1].ImageUrl} />
+            ) : (
+              <p>Loading...</p>
+            )}
+          </SwiperSlide>
+          <SwiperSlide className="with-gradient">
+            {props.images ? (
+              <img src={props.images[2].ImageUrl} />
+            ) : (
+              <p>Loading...</p>
+            )}
+          </SwiperSlide>
+          <div className="home--overlay">
+            <h1>Lorem ipsum dolor</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div className="home--contact">
+              <LinkButton url="/contact" text="Contact us" />
+            </div>
           </div>
-        </div>
+        </Swiper>
       </div>
 
       <div className="home--c2">
