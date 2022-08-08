@@ -1,7 +1,6 @@
 /* Head Contact Info */
 .contact {
   margin-inline: 5%;
-  margin-top: 20px;
 }
 
 .contact--container {
@@ -11,6 +10,7 @@
 .contact--title {
   font-weight: 400;
   font-size: 1.6em;
+  padding-top: 20px;
 }
 
 .contact--para {
