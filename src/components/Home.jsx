@@ -153,7 +153,8 @@ export default function Home(props) {
           illuminati porta lorem mollis aliquam. Dignissim sodales ut eu sem
           integer vitae. Nisi illuminati porta lorem mollis aliquam. Dignissim
           sodales ut eu sem integer vitae. Nisi illuminati porta lorem mollis
-          aliquam. Dignissim sodales ut eu sem integer vitae.
+          aliquam. Dignissim sodales ut eu sem integer vitae. Varius vel
+          pharetra vel turpis nunc eget lorem dolor.
         </p>
         <br></br>
         <div className="home--contact c4">
