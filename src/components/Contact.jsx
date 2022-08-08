@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import messageIcon from "../assets/Icon_Submit.svg";
+import contactImage from "../assets/Img_Contact.png";
 import "../components-css/contact.css";
 import "../components-css/checkbox.css";
 
@@ -184,12 +185,12 @@ export default function Contact() {
       <div className="contact--container">
         <h1 className="contact--title">Contact us</h1>
         <p className="contact--para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic error
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic goodus
           distinctio placeat quae iste enim ad aliquam ab quia nulla?
         </p>
         <form onSubmit={handleSubmit}>
           <div className="grid-container">
-            <div className="container-width">
+            <div className="container-width fullName">
               <div className="contact--fullName">
                 <label htmlFor="fullName">Full name</label>
                 <input
@@ -207,7 +208,7 @@ export default function Contact() {
                 />
               </div>
             </div>
-            <div className="container-width">
+            <div className="container-width email">
               <div>
                 <label htmlFor="email">Email address</label>
                 <input
@@ -307,7 +308,7 @@ export default function Contact() {
               {checkedBox && (
                 <div>
                   <div className="grid-container-2">
-                    <div className="container-width">
+                    <div className="container-width addressLine1">
                       <div>
                         <label htmlFor="addressLine1">Address line 1</label>
                         <input
@@ -321,7 +322,7 @@ export default function Contact() {
                         />
                       </div>
                     </div>
-                    <div className="container-width">
+                    <div className="container-width addressLine2">
                       <div>
                         <label htmlFor="addressLine2">
                           Address line 2
@@ -339,7 +340,7 @@ export default function Contact() {
                         />
                       </div>
                     </div>
-                    <div>
+                    <div className="container-width-c1">
                       <div>
                         <label htmlFor="cityTown">City/Town</label>
                         <input
@@ -353,7 +354,7 @@ export default function Contact() {
                         />
                       </div>
                     </div>
-                    <div>
+                    <div className="container-width-c2">
                       <div>
                         <label htmlFor="stateCounty">State/County</label>
                         <input
@@ -367,7 +368,7 @@ export default function Contact() {
                         />
                       </div>
                     </div>
-                    <div>
+                    <div className="container-width-c3">
                       <div>
                         <label htmlFor="postcode">Postcode</label>
                         <input
@@ -381,7 +382,7 @@ export default function Contact() {
                         />
                       </div>
                     </div>
-                    <div>
+                    <div className="container-width-c4">
                       <div>
                         <label htmlFor="country">Country</label>
                         <input
@@ -408,6 +409,11 @@ export default function Contact() {
           </div>
         </form>
       </div>
+      {/* {checkedBox && (
+        <div className="image">
+          <img src={contactImage} alt="company logo" />
+        </div>
+      )} */}
     </div>
   );
 }
