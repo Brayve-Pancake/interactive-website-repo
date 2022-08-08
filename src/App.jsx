@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 
 import About from "./components/About";
@@ -37,8 +37,8 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-      <Home images={bannerData.Details} isDesktop={isDesktop} />
       <Footer />
     </div>
   );
