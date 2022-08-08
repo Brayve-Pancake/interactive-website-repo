@@ -33,7 +33,10 @@ function App() {
     <div className="App">
       <Navbar isDesktop={isDesktop} />
       <Routes>
-        <Route path="/" element={<Home images={bannerData.Details} />} />
+        <Route
+          path="/"
+          element={<Home images={bannerData.Details} isDesktop={isDesktop} />}
+        />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

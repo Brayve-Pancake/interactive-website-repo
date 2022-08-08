@@ -17,7 +17,7 @@ export default function Home(props) {
           pagination={{
             dynamicBullets: true,
           }}
-          navigation={true}
+          navigation={props.isDesktop}
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
