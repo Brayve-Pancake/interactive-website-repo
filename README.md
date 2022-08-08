@@ -27,3 +27,20 @@
 `npm run build`
 
 `npm run preview`
+
+
+
+## Launch Vite in Dev mode:
+
+`npm run dev`
+
+
+# This is what it looks like:
+
+![Wide homepage](./images-GH/SS-Wide1.png)
+
+![Mobile homepage](./images-GH/ss-mobile2.png)
+
+![Wide form](./images-GH/SS-Wide2.png)
+
+![Mobile form](./images-GH/ss-mobile1.png)
