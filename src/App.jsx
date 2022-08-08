@@ -38,7 +38,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Home />
+      <Home images={bannerData.Details} isDesktop={isDesktop} />
       <Footer />
     </div>
   );
