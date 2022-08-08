@@ -147,6 +147,7 @@
   padding: 5%;
   display: flex;
   flex-direction: column;
+  color: #444444;
 }
 
 .home--c4-head {

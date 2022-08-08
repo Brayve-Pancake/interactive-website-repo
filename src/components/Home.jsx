@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 
 import chairImage from "../assets/shutterstock_696636415.jpg";
+import modelImage from "../assets/shutterstock_1302552622.jpg";
 import LinkButton from "./LinkButton";
 import "../components-css/home.css";
 
@@ -64,11 +65,7 @@ export default function Home(props) {
       <div className="home--c2">
         <div className="container-re-order">
           <div className="col1">
-            {props.images ? (
-              <img className="home--banner-two" src={chairImage} />
-            ) : (
-              <p>Loading...</p>
-            )}
+            <img className="home--banner-two" src={chairImage} />
           </div>
           <div className="home--c2-text col2">
             <h2 className="home--c2-title">
@@ -107,11 +104,7 @@ export default function Home(props) {
       </div>
 
       <div className="home--c3">
-        {props.images ? (
-          <img className="home--banner-one c3" src={props.images[2].ImageUrl} />
-        ) : (
-          <p>Loading...</p>
-        )}
+        <img className="home--banner-one c3" src={modelImage} />
         <div className="home--c3-overlay">
           <h1>Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
           <p>
@@ -147,7 +140,7 @@ export default function Home(props) {
           nisi porta lorem mollis aliquam. Mattis rhoncus urna neque viverra
           justo nec. Dignissim sodales ut eu sem integer vitae. Varius vel
           pharetra vel turpis nunc eget lorem dolor. Nisi illuminati porta lorem
-          mollis aliquam. Dignissim sodales ut eu sem integer vitae.Nisi
+          mollis aliquam. Dignissim sodales ut eu sem integer vitae. Nisi
           illuminati porta lorem mollis aliquam. Dignissim sodales ut eu sem
           integer vitae.
           <br></br>
@@ -159,7 +152,7 @@ export default function Home(props) {
           vitae. Varius vel pharetra vel turpis nunc eget lorem dolor. Nisi
           illuminati porta lorem mollis aliquam. Dignissim sodales ut eu sem
           integer vitae. Nisi illuminati porta lorem mollis aliquam. Dignissim
-          sodales ut eu sem integer vitae.Nisi illuminati porta lorem mollis
+          sodales ut eu sem integer vitae. Nisi illuminati porta lorem mollis
           aliquam. Dignissim sodales ut eu sem integer vitae.
         </p>
         <br></br>
