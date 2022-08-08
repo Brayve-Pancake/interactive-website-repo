@@ -1,14 +1,13 @@
-import "../components-css/home.css";
-import LinkButton from "./LinkButton";
-import chair from "../assets/shutterstock_696636415.jpg";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import "../components-css/swiperStyles.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css";
+
+import chairImage from "../assets/shutterstock_696636415.jpg";
+import LinkButton from "./LinkButton";
+import "../components-css/home.css";
 
 export default function Home(props) {
   return (
@@ -66,7 +65,7 @@ export default function Home(props) {
         <div className="container-re-order">
           <div className="col1">
             {props.images ? (
-              <img className="home--banner-two" src={chair} />
+              <img className="home--banner-two" src={chairImage} />
             ) : (
               <p>Loading...</p>
             )}
