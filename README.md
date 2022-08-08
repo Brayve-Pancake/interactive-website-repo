@@ -14,16 +14,16 @@
 - Data composition/ handling
 - Mobile first design with @media break points
 
-Deployed to gh-pages:
-
-Clone the repo to your local:
+## Clone the repo to your local:
 
 `git clone git@github.com:Brayve-Pancake/interactive-website-repo.git`
 
-Install dependencies:
+## Install dependencies:
 
 `npm i`
 
-Launch Vite:
+## Launch Vite:
+
+`npm run build`
 
 `npm run preview`
