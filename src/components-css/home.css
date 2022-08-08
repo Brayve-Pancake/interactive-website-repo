@@ -226,8 +226,15 @@
     width: 120px;
   }
 
+  /* Manipulating swipe images */
   .home--banner-one {
     object-position: 50% 30%;
+  }
+  .home--banner-one.second {
+    object-position: 50% 50%;
+  }
+  .home--banner-one.third {
+    object-position: 50% 10%;
   }
 
   /* Second Card */

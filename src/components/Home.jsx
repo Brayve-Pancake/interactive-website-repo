@@ -23,21 +23,30 @@ export default function Home(props) {
         >
           <SwiperSlide className="with-gradient">
             {props.images ? (
-              <img src={props.images[0].ImageUrl} />
+              <img
+                className="home--banner-one"
+                src={props.images[0].ImageUrl}
+              />
             ) : (
               <p>Loading...</p>
             )}
           </SwiperSlide>
           <SwiperSlide className="with-gradient">
             {props.images ? (
-              <img src={props.images[1].ImageUrl} />
+              <img
+                className="home--banner-one second"
+                src={props.images[1].ImageUrl}
+              />
             ) : (
               <p>Loading...</p>
             )}
           </SwiperSlide>
           <SwiperSlide className="with-gradient">
             {props.images ? (
-              <img src={props.images[2].ImageUrl} />
+              <img
+                className="home--banner-one third"
+                src={props.images[2].ImageUrl}
+              />
             ) : (
               <p>Loading...</p>
             )}
