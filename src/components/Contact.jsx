@@ -5,6 +5,7 @@ import "../components-css/checkbox.css";
 
 export default function Contact() {
   const [additionalPhone, setAdditionalPhone] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     FullName: "",
     EmailAddress: "",
@@ -75,7 +76,10 @@ export default function Contact() {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        console.log(res.Status);
+        if (res.Status == 1) {
+          setSubmitted(true);
+        }
       })
       .catch((error) => {
         console.log("error", error);
@@ -400,7 +404,7 @@ export default function Contact() {
             <div className="container-width submit">
               <button className="contact--button submit" type="submit">
                 <img className="messageIcon" src={messageIcon} />
-                Submit
+                {submitted ? "Submission successful!" : "Submit"}
               </button>
             </div>
           </div>

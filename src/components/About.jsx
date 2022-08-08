@@ -1,5 +1,5 @@
 import "../components-css/about.css";
-import chair from "../assets/shutterstock_696636415.jpg";
+import chairImage from "../assets/shutterstock_696636415.jpg";
 
 export default function About() {
   return (
@@ -33,7 +33,7 @@ export default function About() {
         <br></br>
         <img
           className="about--img"
-          src={chair}
+          src={chairImage}
           alt="Office space with a comfortable orange chair"
         ></img>
         <br></br>

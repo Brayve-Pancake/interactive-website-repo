@@ -94,6 +94,7 @@ div > label {
   border: 0;
   border-radius: 3px;
   padding: 12px;
+  cursor: pointer;
 }
 
 .contact--button.submit {
