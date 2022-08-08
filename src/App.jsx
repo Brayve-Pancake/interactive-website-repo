@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import "./App.css";
 
 import About from "./components/About";
 import Contact from "./components/Contact";
