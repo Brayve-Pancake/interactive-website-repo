@@ -25,10 +25,6 @@ function App() {
       .then((data) => setBannerData(data));
   }, []);
 
-  // useEffect(() => {
-  //   console.log("App render");
-  // });
-
   return (
     <div className="App">
       <Navbar isDesktop={isDesktop} />
