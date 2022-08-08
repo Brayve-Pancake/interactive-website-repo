@@ -15,8 +15,11 @@ export default function About() {
         architecto nesciunt, sint neque blanditiis inventore obcaecati iusto
         sunt nobis beatae reiciendis ea cum debitis odit error aliquid est
         quaerat eveniet ipsum consequatur excepturi?{" "}
-        <a className="about--a">Beatae veniam magni nostrum!</a> Adipisci vero
-        beatae, dicta magni illum, eveniet, non illo modi dolore ducimus vel.
+        <a href="https://www.epicroadrides.com/" className="about--a">
+          Beatae veniam magni nostrum!
+        </a>{" "}
+        Adipisci vero beatae, dicta magni illum, eveniet, non illo modi dolore
+        ducimus vel.
         <br></br>
         <br></br>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, sunt cum
