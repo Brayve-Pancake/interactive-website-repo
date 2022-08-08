@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import messageIcon from "../assets/Icon_Submit.svg";
-import contactImage from "../assets/Img_Contact.png";
 import "../components-css/contact.css";
 import "../components-css/checkbox.css";
 
 export default function Contact() {
-  const defaultData = {
+  const [additionalPhone, setAdditionalPhone] = useState(false);
+  const [formData, setFormData] = useState({
     FullName: "",
     EmailAddress: "",
     PhoneNumberOne: "",
@@ -18,14 +18,97 @@ export default function Contact() {
     StateCounty: "",
     Postcode: "",
     Country: "",
-  };
-  const [additionalPhone, setAdditionalPhone] = useState(false);
-  const [formData, setFormData] = useState(defaultData);
+  });
+  const checkedBox = formData.bIncludeAddressDetails;
   const endpointUrl =
     "https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit";
 
-  const checkedBox = formData.bIncludeAddressDetails;
+  function toggleAdditionalPhone() {
+    setAdditionalPhone((prevState) => !prevState);
+    // Clear #2 on toggle
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        PhoneNumberTwo: "",
+      };
+    });
+  }
 
+  function handleFormChange(event) {
+    const { name, value, type, checked } = event.target;
+
+    setFormData((prevFormData) => {
+      // Deselected checkbox? --> clear data
+      if (type === "checkbox" && !checked) {
+        return {
+          ...prevFormData,
+          [name]: checked,
+          AddressLine1: "",
+          AddressLine2: "",
+          CityTown: "",
+          StateCounty: "",
+          Postcode: "",
+          Country: "",
+        };
+      }
+      // Update state onChange
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (!valid()) {
+      return;
+    }
+
+    fetch(endpointUrl, {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: reconstructData(),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      });
+  }
+
+  // VALIDATION
+  function valid(e) {
+    if (checkedBox && isValidPostcode(formData.Postcode) === false) {
+      alert("Oops! Invalid postcode :(");
+      return false;
+    }
+
+    if (
+      !numValidLength(formData.PhoneNumberOne) ||
+      !numValidLength(formData.PhoneNumberTwo)
+    ) {
+      alert("Phone number is too long... (Max length is 20 digits)");
+      return false;
+    }
+
+    if (isValidEmail(formData.EmailAddress) === false) {
+      alert("Your email is incorrectly formatted :)");
+      return false;
+    }
+
+    if (mesValidLength(formData.Message) === false) {
+      alert(
+        "We appreciate your detailed message, but it is too long for our system. Please reduce it's length"
+      );
+      return false;
+    }
+    return true;
+  }
+
+  // Helper functions
   function reconstructData() {
     let phoneNumbersArray = [];
     if (formData.PhoneNumberOne !== "") {
@@ -51,52 +134,6 @@ export default function Contact() {
     });
   }
 
-  function handleFormChange(event) {
-    const { name, value, type, checked } = event.target;
-    console.log(event.target.name);
-    console.log(formData);
-    setFormData((prevFormData) => {
-      // Deselect and clear data
-      if (type === "checkbox" && !checked) {
-        return {
-          ...prevFormData,
-          [name]: checked,
-          AddressLine1: "",
-          AddressLine2: "",
-          CityTown: "",
-          StateCounty: "",
-          Postcode: "",
-          Country: "",
-        };
-      }
-      return {
-        ...prevFormData,
-        [name]: type === "checkbox" ? checked : value,
-      };
-    });
-  }
-
-  function toggleAdditionalPhone() {
-    setAdditionalPhone((prevState) => !prevState);
-    // Clear #2 on toggle
-    setFormData((prevFormData) => {
-      return {
-        ...prevFormData,
-        PhoneNumberTwo: "",
-      };
-    });
-  }
-
-  function returnFirstChar() {
-    console.log(formData.FullName.charAt(0));
-    return formData.FullName.charAt(0);
-  }
-
-  // VALIDATION
-  const redStyle = {
-    boxShadow: "1px 2px 9px #F4AAB9",
-  };
-
   function mesValidLength(mesasge) {
     return mesasge.length <= 500;
   }
@@ -116,56 +153,10 @@ export default function Contact() {
     return emailRegEx.test(p);
   }
 
-  function validate(e) {
-    if (checkedBox && isValidPostcode(formData.Postcode) === false) {
-      alert("invalid postcode");
-      return false;
-    }
-
-    if (
-      !numValidLength(formData.PhoneNumberOne) ||
-      !numValidLength(formData.PhoneNumberTwo)
-    ) {
-      alert("Phone number is too long (max 20 char)");
-      return false;
-    }
-
-    if (!isValidEmail(formData.EmailAddress)) {
-      alert("Your email is incorrectly formatted :)");
-      return false;
-    }
-
-    if (!mesValidLength(formData.Message)) {
-      alert(
-        "We appreciate your detailed message, but it is too long for our system. Please reduce it's length"
-      );
-      return false;
-    }
-    return true;
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (validate() === false) {
-      return;
-    }
-
-    alert("A form was submitted: " + reconstructData());
-    console.log(reconstructData());
-
-    fetch(endpointUrl, {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: reconstructData(),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-      });
-  }
+  // For invalid states
+  const redStyle = {
+    boxShadow: "1px 2px 9px #F4AAB9",
+  };
 
   return (
     <div className="contact">
