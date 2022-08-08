@@ -111,8 +111,9 @@ export default function Contact() {
     return true;
   }
 
-  // Helper functions
+  // HELPER FUNCTIONS :)
   function reconstructData() {
+    // Populate array should number exist
     let phoneNumbersArray = [];
     if (formData.PhoneNumberOne !== "") {
       phoneNumbersArray.push(formData.PhoneNumberOne);
