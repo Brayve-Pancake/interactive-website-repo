@@ -15,8 +15,15 @@
 - Mobile first design with @media break points
 
 Deployed to gh-pages:
-`git clone git@github.com:Brayve-Pancake/interactive-website-repo.git` Clone the repo to your local
 
-`npm i` This will install dependencies
+Clone the repo to your local:
 
-`npm run preview` This will launch Vite
+`git clone git@github.com:Brayve-Pancake/interactive-website-repo.git`
+
+Install dependencies:
+
+`npm i`
+
+Launch Vite:
+
+`npm run preview`
