@@ -1,14 +1,18 @@
 {
   "name": "interactive-website",
   "private": true,
+  "homepage": "https://tomerpacific.github.io/starter-project/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-responsive": "^9.0.0-beta.10",
