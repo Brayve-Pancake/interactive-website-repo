@@ -260,6 +260,7 @@ export default function Contact() {
 
             <div className="container-width">
               <button
+                type="button"
                 className="contact--button"
                 onClick={toggleAdditionalPhone}
               >
